@@ -23,12 +23,13 @@ def getWeather(canvas):
     label1.config(text = final_info)
     label2.config(text = final_data)
 
-canvas.title("Weather App")
-f = ("poppins", 15, "bold")
-t = ("poppins", 35, "italic")
+
 
 canvas = tk.Tk()
 canvas.geometry("600x600")
+canvas.title("WEATHER APP")
+f = ("poppins", 15, "bold")
+t = ("poppins", 35, "italic")
 
 textField = tk.Entry(canvas, justify='center', width = 20, font = t)
 textField.pack(pady = 17)
