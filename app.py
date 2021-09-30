@@ -19,19 +19,19 @@ def getWeather(canvas):
     sunset = time.strftime('%I:%M:%S', time.gmtime(json_data['sys']['sunset'] - 21600))
 
     final_info = condition + "\n" + str(temp) + "°C" 
-    final_data = "\n"+ "Min Temp: " + str(min_temp) + "°C" + "\n" + "Max Temp: " + str(max_temp) + "°C" +"\n" + "Pressure: " + str(pressure) + "\n" +"Humidity: " + str(humidity) + "\n" +"Wind Speed: " + str(wind) + "\n" + "Sunrise: " + sunrise + "\n" + "Sunset: " + sunset
+    final_data = "\n"+ "Min Temp: " + str(min_temp) + "°C" + "\n" + "Max Temp: " + str(max_temp) + "°C" +"\n" + "Pressure: " + str(pressure) + "PSI" + "\n" +"Humidity: " + str(humidity) + "GM" + "\n" +"Wind Speed: " + str(wind) + "MPH" + "\n" + "Sunrise: " + sunrise + "\n" + "Sunset: " + sunset
     label1.config(text = final_info)
     label2.config(text = final_data)
 
-
-canvas = tk.Tk()
-canvas.geometry("600x500")
 canvas.title("Weather App")
 f = ("poppins", 15, "bold")
-t = ("poppins", 35, "bold")
+t = ("poppins", 35, "italic")
+
+canvas = tk.Tk()
+canvas.geometry("600x600")
 
 textField = tk.Entry(canvas, justify='center', width = 20, font = t)
-textField.pack(pady = 20)
+textField.pack(pady = 17)
 textField.focus()
 textField.bind('<Return>', getWeather)
 
